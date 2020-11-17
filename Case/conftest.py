@@ -20,11 +20,11 @@ url  = readConfig().getstr('url','url')
 @pytest.fixture(scope='class',autouse=True) # autouse=True 自动使用
 def fixture_class():
     global driver
-    chrome_options = Options()  #设置无头浏览器
-    chrome_options.add_argument('--headless')
-    chrome_options.add_argument('--disable-gpu')
-    driver = Chrome(options=chrome_options, service_log_path=r"D:\ChromeLog\log.log")
-    # driver = Chrome(r"D:\Python37\chromedriver.exe")
+    # chrome_options = Options()  #设置无头浏览器
+    # chrome_options.add_argument('--headless')
+    # chrome_options.add_argument('--disable-gpu')
+    # driver = Chrome(options=chrome_options, service_log_path=r"D:\ChromeLog\log.log")
+    driver = Chrome("D:\Python37\cchromedriver.exe")
     driver.maximize_window()
     time.sleep(3)
     yield driver
