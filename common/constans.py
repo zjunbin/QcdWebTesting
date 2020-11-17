@@ -18,15 +18,12 @@ log_path = os.path.join(path, 'logs/')
 data_case = os.path.join(path, 'datas', 'testcase.xlsx')
 # 测试报告存放
 result_path = os.path.join(path, 'result' + '/' + day + '-result.html')
-#测试数据
-save_image = os.path.join(path,'result/'+ day + '.png')
-#allure 报告
-allure_paht = os.path.join(path,'result/allure')
-#html 报告
-html_path = os.path.join(path,'result'+'/'+day+'testing.html')
-
-
-
+# 测试数据
+save_image = os.path.join(path, 'result/' + day + '.png')
+# allure 报告
+allure_paht = os.path.join(path, 'result/allure')
+# html 报告
+html_path = os.path.join(path, 'result' + '/' + day + '-testing.html')
 
 if __name__ == '__main__':
-    print(log_path)
+    print(html_path)

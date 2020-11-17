@@ -4,4 +4,4 @@
 import pytest
 from common import constans
 if __name__ == '__main__':
-    pytest.main(['-m smoke','-s',r'--html=result/{}',r'--alluredir={}'.format(constans.html_path,constans.allure_paht)])
+    pytest.main(['-s',r'--html=result/qcdwebtesting',r'--alluredir=result/allure'])
