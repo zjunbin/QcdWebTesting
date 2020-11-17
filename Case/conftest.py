@@ -24,7 +24,7 @@ def fixture_class():
     # chrome_options.add_argument('--headless')
     # chrome_options.add_argument('--disable-gpu')
     # driver = Chrome(options=chrome_options, service_log_path=r"D:\ChromeLog\log.log")
-    driver = Chrome()
+    driver = Chrome(r"D:\Python37\chromedriver.exe")
     driver.maximize_window()
     time.sleep(3)
     yield driver

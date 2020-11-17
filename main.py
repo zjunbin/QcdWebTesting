@@ -4,4 +4,4 @@
 import pytest
 from common import constans
 if __name__ == '__main__':
-    pytest.main(['-s',r'--html=result/qcdwebtesting',r'--alluredir=result/allure'])
+    pytest.main([r'--html=result/qcd.html',r'--alluredir=result/allure'])
