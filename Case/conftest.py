@@ -4,8 +4,7 @@
 import pytest
 import time
 from selenium.webdriver import Chrome
-from selenium.webdriver.chrome.options import Options
-
+from selenium.webdriver import ChromeOptions
 '''fixture 作用域
 fixture的参数中，有scope作用域：
 1、function 每个test都会运行，默认值
@@ -24,9 +23,11 @@ def fixture_class():
     # chrome_options.add_argument('--headless')
     # chrome_options.add_argument('--disable-gpu')
     # driver = Chrome(options=chrome_options, service_log_path=r"D:\ChromeLog\log.log")
-    driver = Chrome("D:\Python37\chromedriver.exe")
+    chrome_options = ChromeOptions()
+    chrome_options.binary_location=r"C:\Users\zjb\AppData\Local\Google\Chrome\Application\chrome.exe"
+    driver = Chrome(executable_path=r"D:\Python37\chromedriver.exe",chrome_options=chrome_options)
     driver.maximize_window()
-    time.sleep(3)
+    time.sleep(2)
     yield driver
     driver.quit()
 
@@ -36,6 +37,7 @@ def prepara_env() -> None:
     # driver = Chrome(service_log_path=r"D:\ChromeLog\log.log")
     # driver.maximize_window()
     # driver.get("http://120.78.128.25:8765/Index/login.html")
+
     driver.get(url)
     yield  driver #分隔符    类似  return
     #后置条件
